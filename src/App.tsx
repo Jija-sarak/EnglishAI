@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User } from './types';
-import { LessonData } from './utils/dataLoader';
+import { GeneratedLesson } from './utils/contentGenerator';
 import { loadProgress, saveProgress, addXP, completeActivity } from './utils/storage';
 import { checkNewBadges } from './utils/badges';
 import { Header } from './components/Header';
@@ -16,7 +16,7 @@ type ViewState =
   | { type: 'dashboard' }
   | { type: 'levelSelector'; section: keyof Omit<User, 'totalXP' | 'streak' | 'lastActiveDate' | 'badges'> }
   | { type: 'lessonList'; section: keyof Omit<User, 'totalXP' | 'streak' | 'lastActiveDate' | 'badges'>; level: 'beginner' | 'intermediate' | 'advanced' }
-  | { type: 'lesson'; section: keyof Omit<User, 'totalXP' | 'streak' | 'lastActiveDate' | 'badges'>; lesson: LessonData };
+  | { type: 'lesson'; section: keyof Omit<User, 'totalXP' | 'streak' | 'lastActiveDate' | 'badges'>; lesson: GeneratedLesson };
 
 function App() {
   const [user, setUser] = useState<User>(loadProgress());
@@ -39,6 +39,7 @@ function App() {
   };
 
   const handleLessonSelect = (lesson: LessonData) => {
+  const handleLessonSelect = (lesson: GeneratedLesson) => {
     if (currentView.type === 'lessonList') {
       setCurrentView({ type: 'lesson', section: currentView.section, lesson });
     }
@@ -62,7 +63,7 @@ function App() {
       
       // Check for level up
       const currentSection = updatedUser[currentView.section];
-      const xpThresholds = { beginner: 100, intermediate: 300, advanced: 500 };
+      const xpThresholds = { beginner: 50, intermediate: 150, advanced: 300 };
       
       if (currentSection.level === 'beginner' && currentSection.xp >= xpThresholds.beginner) {
         updatedUser[currentView.section].level = 'intermediate';
@@ -73,6 +74,11 @@ function App() {
       }
       
       setUser(updatedUser);
+      
+      // Navigate back to lesson list to show next lesson
+      const section = currentView.section;
+      const userLevel = updatedUser[section].level;
+      setCurrentView({ type: 'lessonList', section, level: userLevel });
     }
   };
 

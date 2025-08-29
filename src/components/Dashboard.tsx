@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { User } from '../types';
+import { calculateUserPerformance } from '../utils/performanceTracker';
 import { SectionCard } from './SectionCard';
 
 interface DashboardProps {
@@ -48,10 +49,29 @@ export function Dashboard({ user, onSectionSelect }: DashboardProps) {
   ];
 
   const isLocked = (sectionKey: string, user: User) => {
-    // All sections are now unlocked from the start
+    // All sections are unlocked from the start
     return false;
   };
 
+  const getSectionDescription = (sectionKey: string, user: User) => {
+    const performance = calculateUserPerformance(user, sectionKey);
+    const baseDescriptions = {
+      listening: 'Improve your listening skills with AI-generated audio exercises',
+      reading: 'Enhance reading comprehension with engaging passages',
+      speaking: 'Practice pronunciation and fluency with speech recognition',
+      writing: 'Develop writing skills with guided prompts and feedback',
+      grammar: 'Master English grammar rules and structures',
+      vocabulary: 'Expand your word knowledge with interactive exercises'
+    };
+    
+    const base = baseDescriptions[sectionKey as keyof typeof baseDescriptions];
+    
+    if (performance.completedLessons > 0) {
+      return `${base} • ${performance.completedLessons} lessons completed • ${Math.round(performance.averageScore)}% avg score`;
+    }
+    
+    return base;
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
       <div className="max-w-7xl mx-auto">
@@ -84,7 +104,7 @@ export function Dashboard({ user, onSectionSelect }: DashboardProps) {
               <SectionCard
                 title={section.title}
                 icon={section.icon}
-                description={section.description}
+                description={getSectionDescription(section.key, user)}
                 progress={user[section.key]}
                 onClick={() => onSectionSelect(section.key)}
                 isLocked={isLocked(section.key, user)}
