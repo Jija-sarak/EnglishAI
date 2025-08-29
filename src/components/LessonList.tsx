@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { User } from '../types';
-import { loadLessonData, SectionData, LessonData } from '../utils/dataLoader';
+import { GeneratedLesson, generateLessonSequence, getNextLessonNumber } from '../utils/contentGenerator';
+import { calculateUserPerformance } from '../utils/performanceTracker';
 import { Loader2, Play, BookOpen, Mic, PenTool, FileText, Brain } from 'lucide-react';
 
 interface LessonListProps {
   skill: keyof Omit<User, 'totalXP' | 'streak' | 'lastActiveDate' | 'badges'>;
   level: 'beginner' | 'intermediate' | 'advanced';
   user: User;
-  onLessonSelect: (lesson: LessonData) => void;
+  onLessonSelect: (lesson: GeneratedLesson) => void;
   onBack: () => void;
 }
 
@@ -22,25 +23,61 @@ const skillIcons = {
 };
 
 export function LessonList({ skill, level, user, onLessonSelect, onBack }: LessonListProps) {
-  const [sectionData, setSectionData] = useState<SectionData | null>(null);
+  const [lessons, setLessons] = useState<GeneratedLesson[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [generatingLesson, setGeneratingLesson] = useState(false);
 
   useEffect(() => {
-    loadData();
+    loadLessons();
   }, [skill, level]);
 
-  const loadData = async () => {
+  const loadLessons = async () => {
     try {
       setLoading(true);
       setError(null);
-      const data = await loadLessonData(skill, level);
-      setSectionData(data);
+      
+      // Get user performance for adaptive difficulty
+      const performance = calculateUserPerformance(user, skill);
+      
+      // Generate initial lessons (start with 3 lessons)
+      const nextLessonNum = getNextLessonNumber(user, skill, level);
+      const generatedLessons = await generateLessonSequence(
+        skill, 
+        level, 
+        nextLessonNum, 
+        3, 
+        performance
+      );
+      
+      setLessons(generatedLessons);
     } catch (err) {
       setError('Failed to load lessons. Please try again.');
       console.error('Error loading lesson data:', err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const generateNextLesson = async () => {
+    try {
+      setGeneratingLesson(true);
+      const performance = calculateUserPerformance(user, skill);
+      const nextLessonNum = getNextLessonNumber(user, skill, level) + lessons.length;
+      
+      const newLessons = await generateLessonSequence(
+        skill, 
+        level, 
+        nextLessonNum, 
+        1, 
+        performance
+      );
+      
+      setLessons(prev => [...prev, ...newLessons]);
+    } catch (err) {
+      console.error('Error generating new lesson:', err);
+    } finally {
+      setGeneratingLesson(false);
     }
   };
 
@@ -50,7 +87,7 @@ export function LessonList({ skill, level, user, onLessonSelect, onBack }: Lesso
 
   const canAccessLesson = (index: number) => {
     if (index === 0) return true;
-    return isLessonCompleted(sectionData?.lessons[index - 1]?.id || '');
+    return isLessonCompleted(lessons[index - 1]?.id || '');
   };
 
   const IconComponent = skillIcons[skill];
@@ -60,19 +97,19 @@ export function LessonList({ skill, level, user, onLessonSelect, onBack }: Lesso
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
         <div className="text-center">
           <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-blue-600" />
-          <p className="text-gray-600">Loading lessons...</p>
+          <p className="text-gray-600">Generating personalized lessons...</p>
         </div>
       </div>
     );
   }
 
-  if (error || !sectionData) {
+  if (error) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
         <div className="text-center">
-          <p className="text-red-600 mb-4">{error || 'Failed to load lessons'}</p>
+          <p className="text-red-600 mb-4">{error}</p>
           <button 
-            onClick={loadData}
+            onClick={loadLessons}
             className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
           >
             Try Again
@@ -95,12 +132,12 @@ export function LessonList({ skill, level, user, onLessonSelect, onBack }: Lesso
 
         <div className="text-center mb-8">
           <IconComponent className="w-16 h-16 mx-auto mb-4 text-blue-600" />
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">{sectionData.title}</h1>
-          <p className="text-gray-600">{sectionData.description}</p>
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">{skill.charAt(0).toUpperCase() + skill.slice(1)} - {level.charAt(0).toUpperCase() + level.slice(1)}</h1>
+          <p className="text-gray-600">Personalized lessons adapted to your learning progress</p>
         </div>
 
         <div className="grid gap-6">
-          {sectionData.lessons.map((lesson, index) => {
+          {lessons.map((lesson, index) => {
             const completed = isLessonCompleted(lesson.id);
             const canAccess = canAccessLesson(index);
 
@@ -154,6 +191,22 @@ export function LessonList({ skill, level, user, onLessonSelect, onBack }: Lesso
               </motion.div>
             );
           })}
+          
+          {/* Generate more lessons button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center"
+          >
+            <button
+              onClick={generateNextLesson}
+              disabled={generatingLesson}
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 disabled:opacity-50 flex items-center space-x-2 mx-auto"
+            >
+              {generatingLesson && <Loader2 className="w-4 h-4 animate-spin" />}
+              <span>{generatingLesson ? 'Generating...' : 'Generate More Lessons'}</span>
+            </button>
+          </motion.div>
         </div>
       </div>
     </div>
