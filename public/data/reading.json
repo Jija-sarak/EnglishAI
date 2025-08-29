@@ -1,0 +1,117 @@
+{
+  "beginner": {
+    "title": "Beginner Reading",
+    "description": "Simple texts with basic vocabulary and grammar",
+    "xpRequired": 0,
+    "lessons": [
+      {
+        "id": "reading-beginner-1",
+        "title": "My Family",
+        "text": "My name is Anna. I have a small family. My father is a doctor and my mother is a teacher. I have one brother. His name is David and he is 10 years old. We live in a house with a garden. We have a dog named Max. On weekends, we like to go to the park together. My family is very happy.",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "What is Anna's father's job?",
+            "options": ["Teacher", "Doctor", "Engineer", "Driver"],
+            "correctAnswer": 1,
+            "points": 10
+          },
+          {
+            "id": "q2",
+            "type": "true-false",
+            "question": "Anna has two brothers.",
+            "correctAnswer": false,
+            "points": 10
+          },
+          {
+            "id": "q3",
+            "type": "mcq",
+            "question": "What is the dog's name?",
+            "options": ["Max", "Rex", "Buddy", "Charlie"],
+            "correctAnswer": 0,
+            "points": 10
+          }
+        ]
+      },
+      {
+        "id": "reading-beginner-2",
+        "title": "Shopping for Food",
+        "text": "Lisa goes to the supermarket every Saturday. She makes a shopping list before she goes. Today she needs to buy milk, bread, eggs, and apples. She also wants to buy some cheese and chicken for dinner. The supermarket is very big and has many different foods. Lisa pays with her credit card and takes her groceries home in bags.",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "When does Lisa go shopping?",
+            "options": ["Every Friday", "Every Saturday", "Every Sunday", "Every Monday"],
+            "correctAnswer": 1,
+            "points": 10
+          },
+          {
+            "id": "q2",
+            "type": "true-false",
+            "question": "Lisa pays with cash.",
+            "correctAnswer": false,
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  "intermediate": {
+    "title": "Intermediate Reading",
+    "description": "More complex texts with varied vocabulary",
+    "xpRequired": 100,
+    "lessons": [
+      {
+        "id": "reading-intermediate-1",
+        "title": "Environmental Protection",
+        "text": "Environmental protection has become one of the most important issues of our time. Climate change, pollution, and deforestation are threatening our planet's future. Many countries are now implementing green policies to reduce carbon emissions. Renewable energy sources like solar and wind power are becoming more popular. Individuals can also contribute by recycling, using public transportation, and reducing waste. Every small action counts in protecting our environment for future generations.",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "According to the text, what are the main environmental threats?",
+            "options": ["Only pollution", "Climate change, pollution, and deforestation", "Only climate change", "Only deforestation"],
+            "correctAnswer": 1,
+            "points": 15
+          },
+          {
+            "id": "q2",
+            "type": "open",
+            "question": "What are three ways individuals can help protect the environment according to the text?",
+            "points": 20
+          }
+        ]
+      }
+    ]
+  },
+  "advanced": {
+    "title": "Advanced Reading",
+    "description": "Complex texts with sophisticated vocabulary and concepts",
+    "xpRequired": 300,
+    "lessons": [
+      {
+        "id": "reading-advanced-1",
+        "title": "Artificial Intelligence Ethics",
+        "text": "The rapid advancement of artificial intelligence presents both unprecedented opportunities and significant ethical challenges. As AI systems become increasingly sophisticated, questions arise about their impact on employment, privacy, and decision-making processes. The concept of algorithmic bias has emerged as a critical concern, as AI systems may perpetuate or amplify existing societal inequalities. Furthermore, the development of autonomous systems raises questions about accountability and responsibility when these systems make decisions that affect human lives. Establishing comprehensive ethical frameworks for AI development and deployment has become imperative for ensuring that these technologies benefit humanity while minimizing potential harm.",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "What is algorithmic bias according to the text?",
+            "options": ["AI systems working too slowly", "AI systems perpetuating societal inequalities", "AI systems being too expensive", "AI systems being too complex"],
+            "correctAnswer": 1,
+            "points": 20
+          },
+          {
+            "id": "q2",
+            "type": "open",
+            "question": "Analyze the main ethical challenges presented by AI according to the text and explain why establishing ethical frameworks is important.",
+            "points": 30
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "beginner": {
+    "title": "Beginner Vocabulary",
+    "description": "Essential everyday vocabulary",
+    "xpRequired": 0,
+    "lessons": [
+      {
+        "id": "vocabulary-beginner-1",
+        "title": "Family Members",
+        "words": [
+          {
+            "word": "mother",
+            "definition": "female parent",
+            "example": "My mother cooks delicious food.",
+            "synonyms": ["mom", "mama"],
+            "pronunciation": "/ˈmʌðər/"
+          },
+          {
+            "word": "father",
+            "definition": "male parent",
+            "example": "My father works in an office.",
+            "synonyms": ["dad", "papa"],
+            "pronunciation": "/ˈfɑːðər/"
+          },
+          {
+            "word": "brother",
+            "definition": "male sibling",
+            "example": "I have one younger brother.",
+            "synonyms": [],
+            "pronunciation": "/ˈbrʌðər/"
+          },
+          {
+            "word": "sister",
+            "definition": "female sibling",
+            "example": "My sister is a doctor.",
+            "synonyms": [],
+            "pronunciation": "/ˈsɪstər/"
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "What is a synonym for 'mother'?",
+            "options": ["sister", "mom", "aunt", "grandmother"],
+            "correctAnswer": 1,
+            "points": 10
+          },
+          {
+            "id": "q2",
+            "type": "fill-blank",
+            "question": "My _____ is older than me. (male sibling)",
+            "correctAnswer": "brother",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "id": "vocabulary-beginner-2",
+        "title": "Colors and Numbers",
+        "words": [
+          {
+            "word": "red",
+            "definition": "the color of blood or fire",
+            "example": "The apple is red.",
+            "synonyms": ["crimson", "scarlet"],
+            "pronunciation": "/red/"
+          },
+          {
+            "word": "blue",
+            "definition": "the color of the sky",
+            "example": "The ocean is blue.",
+            "synonyms": ["azure", "navy"],
+            "pronunciation": "/bluː/"
+          },
+          {
+            "word": "ten",
+            "definition": "the number 10",
+            "example": "I have ten fingers.",
+            "synonyms": [],
+            "pronunciation": "/ten/"
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "What color is the sky usually?",
+            "options": ["red", "green", "blue", "yellow"],
+            "correctAnswer": 2,
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  "intermediate": {
+    "title": "Intermediate Vocabulary",
+    "description": "More advanced vocabulary for daily communication",
+    "xpRequired": 100,
+    "lessons": [
+      {
+        "id": "vocabulary-intermediate-1",
+        "title": "Emotions and Feelings",
+        "words": [
+          {
+            "word": "anxious",
+            "definition": "feeling worried or nervous",
+            "example": "She felt anxious before the exam.",
+            "synonyms": ["worried", "nervous", "concerned"],
+            "pronunciation": "/ˈæŋkʃəs/"
+          },
+          {
+            "word": "delighted",
+            "definition": "very pleased and happy",
+            "example": "I was delighted to receive the good news.",
+            "synonyms": ["thrilled", "overjoyed", "ecstatic"],
+            "pronunciation": "/dɪˈlaɪtɪd/"
+          },
+          {
+            "word": "frustrated",
+            "definition": "feeling annoyed because you cannot achieve something",
+            "example": "He was frustrated with the slow internet.",
+            "synonyms": ["annoyed", "irritated", "exasperated"],
+            "pronunciation": "/ˈfrʌstreɪtɪd/"
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "Which word means 'very pleased and happy'?",
+            "options": ["anxious", "frustrated", "delighted", "worried"],
+            "correctAnswer": 2,
+            "points": 15
+          },
+          {
+            "id": "q2",
+            "type": "open",
+            "question": "Use the word 'anxious' in a sentence about school or work.",
+            "points": 15
+          }
+        ]
+      }
+    ]
+  },
+  "advanced": {
+    "title": "Advanced Vocabulary",
+    "description": "Sophisticated vocabulary for academic and professional use",
+    "xpRequired": 300,
+    "lessons": [
+      {
+        "id": "vocabulary-advanced-1",
+        "title": "Academic and Professional Terms",
+        "words": [
+          {
+            "word": "paradigm",
+            "definition": "a typical example or pattern of something; a model",
+            "example": "The new research challenges the existing paradigm.",
+            "synonyms": ["model", "framework", "pattern"],
+            "pronunciation": "/ˈpærədaɪm/"
+          },
+          {
+            "word": "ubiquitous",
+            "definition": "present, appearing, or found everywhere",
+            "example": "Smartphones have become ubiquitous in modern society.",
+            "synonyms": ["omnipresent", "pervasive", "widespread"],
+            "pronunciation": "/juːˈbɪkwɪtəs/"
+          },
+          {
+            "word": "meticulous",
+            "definition": "showing great attention to detail; very careful and precise",
+            "example": "She is meticulous in her research methodology.",
+            "synonyms": ["careful", "thorough", "precise"],
+            "pronunciation": "/məˈtɪkjələs/"
+          }
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "What does 'ubiquitous' mean?",
+            "options": ["rare", "expensive", "found everywhere", "difficult"],
+            "correctAnswer": 2,
+            "points": 20
+          },
+          {
+            "id": "q2",
+            "type": "open",
+            "question": "Explain how the word 'paradigm' might be used in an academic context and provide an example.",
+            "points": 25
+          }
+        ]
+      }
+    ]
+  }
+}

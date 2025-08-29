@@ -1,0 +1,119 @@
+{
+  "beginner": {
+    "title": "Beginner Listening",
+    "description": "Basic listening comprehension exercises",
+    "xpRequired": 0,
+    "lessons": [
+      {
+        "id": "listening-beginner-1",
+        "title": "Daily Routines",
+        "audioText": "Hi, my name is Sarah. I wake up at 7 AM every morning. First, I brush my teeth and take a shower. Then I have breakfast with my family. I usually eat cereal and drink orange juice. After breakfast, I go to work by bus.",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "What time does Sarah wake up?",
+            "options": ["6 AM", "7 AM", "8 AM", "9 AM"],
+            "correctAnswer": 1,
+            "points": 10
+          },
+          {
+            "id": "q2",
+            "type": "mcq",
+            "question": "How does Sarah go to work?",
+            "options": ["By car", "By bus", "By train", "On foot"],
+            "correctAnswer": 1,
+            "points": 10
+          },
+          {
+            "id": "q3",
+            "type": "mcq",
+            "question": "What does Sarah drink for breakfast?",
+            "options": ["Coffee", "Tea", "Orange juice", "Water"],
+            "correctAnswer": 2,
+            "points": 10
+          }
+        ]
+      },
+      {
+        "id": "listening-beginner-2",
+        "title": "At the Restaurant",
+        "audioText": "Welcome to Mario's Restaurant! My name is Tom and I'll be your waiter today. Our special today is grilled chicken with vegetables. We also have fresh pasta and pizza. What would you like to drink? We have water, soda, juice, and coffee.",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "What is the waiter's name?",
+            "options": ["Mario", "Tom", "John", "Mike"],
+            "correctAnswer": 1,
+            "points": 10
+          },
+          {
+            "id": "q2",
+            "type": "mcq",
+            "question": "What is today's special?",
+            "options": ["Pizza", "Pasta", "Grilled chicken with vegetables", "Salad"],
+            "correctAnswer": 2,
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  "intermediate": {
+    "title": "Intermediate Listening",
+    "description": "More complex listening exercises with detailed comprehension",
+    "xpRequired": 100,
+    "lessons": [
+      {
+        "id": "listening-intermediate-1",
+        "title": "Job Interview",
+        "audioText": "Good morning, please have a seat. Thank you for coming in today. I've reviewed your resume and I'm impressed with your experience. Can you tell me about your previous job? What were your main responsibilities? Also, why are you interested in working for our company? We're looking for someone who can work independently and as part of a team.",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "What did the interviewer review?",
+            "options": ["Application form", "Resume", "Portfolio", "References"],
+            "correctAnswer": 1,
+            "points": 15
+          },
+          {
+            "id": "q2",
+            "type": "open",
+            "question": "What qualities is the company looking for in a candidate?",
+            "points": 20
+          }
+        ]
+      }
+    ]
+  },
+  "advanced": {
+    "title": "Advanced Listening",
+    "description": "Complex listening scenarios with nuanced comprehension",
+    "xpRequired": 300,
+    "lessons": [
+      {
+        "id": "listening-advanced-1",
+        "title": "Academic Lecture",
+        "audioText": "Today we'll discuss the impact of climate change on global ecosystems. Recent studies indicate that rising temperatures are causing significant shifts in biodiversity patterns. Arctic ice melting has accelerated, affecting polar bear populations and marine ecosystems. Furthermore, changing precipitation patterns are influencing agricultural productivity worldwide, with some regions experiencing severe droughts while others face unprecedented flooding.",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "mcq",
+            "question": "What is the main topic of the lecture?",
+            "options": ["Arctic animals", "Climate change impact on ecosystems", "Agricultural methods", "Marine biology"],
+            "correctAnswer": 1,
+            "points": 20
+          },
+          {
+            "id": "q2",
+            "type": "open",
+            "question": "Explain how climate change affects different regions according to the lecture.",
+            "points": 25
+          }
+        ]
+      }
+    ]
+  }
+}

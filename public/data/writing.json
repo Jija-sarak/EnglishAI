@@ -1,0 +1,80 @@
+{
+  "beginner": {
+    "title": "Beginner Writing",
+    "description": "Simple sentences and basic paragraph writing",
+    "xpRequired": 0,
+    "lessons": [
+      {
+        "id": "writing-beginner-1",
+        "title": "Write About Yourself",
+        "prompt": "Write a short paragraph (50-80 words) about yourself. Include your name, age, hobbies, and family.",
+        "instructions": [
+          "Use simple present tense",
+          "Write complete sentences",
+          "Check your spelling",
+          "Use capital letters correctly"
+        ],
+        "minWords": 50,
+        "maxWords": 80,
+        "points": 15
+      },
+      {
+        "id": "writing-beginner-2",
+        "title": "Describe Your Day",
+        "prompt": "Write about what you did yesterday. Use past tense verbs and time expressions.",
+        "instructions": [
+          "Use past tense verbs",
+          "Include time expressions (morning, afternoon, evening)",
+          "Write in chronological order",
+          "Use connecting words like 'then', 'after', 'finally'"
+        ],
+        "minWords": 60,
+        "maxWords": 100,
+        "points": 15
+      }
+    ]
+  },
+  "intermediate": {
+    "title": "Intermediate Writing",
+    "description": "Structured paragraphs and short essays",
+    "xpRequired": 100,
+    "lessons": [
+      {
+        "id": "writing-intermediate-1",
+        "title": "Opinion Essay",
+        "prompt": "Write an essay (150-200 words) about whether students should wear uniforms to school. Give your opinion and support it with reasons.",
+        "instructions": [
+          "Start with a clear thesis statement",
+          "Provide 2-3 supporting reasons",
+          "Use examples to support your points",
+          "Write a conclusion that restates your opinion"
+        ],
+        "minWords": 150,
+        "maxWords": 200,
+        "points": 20
+      }
+    ]
+  },
+  "advanced": {
+    "title": "Advanced Writing",
+    "description": "Complex essays and formal writing",
+    "xpRequired": 300,
+    "lessons": [
+      {
+        "id": "writing-advanced-1",
+        "title": "Argumentative Essay",
+        "prompt": "Write a formal argumentative essay (300-400 words) on the topic: 'Should artificial intelligence replace human teachers in education?' Present both sides of the argument and give your reasoned conclusion.",
+        "instructions": [
+          "Write a compelling introduction with a clear thesis",
+          "Present arguments for both sides",
+          "Use formal academic language",
+          "Include specific examples and evidence",
+          "Write a strong conclusion with your final position"
+        ],
+        "minWords": 300,
+        "maxWords": 400,
+        "points": 30
+      }
+    ]
+  }
+}

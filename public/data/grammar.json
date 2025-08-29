@@ -1,0 +1,135 @@
+{
+  "beginner": {
+    "title": "Beginner Grammar",
+    "description": "Basic grammar rules and sentence structure",
+    "xpRequired": 0,
+    "lessons": [
+      {
+        "id": "grammar-beginner-1",
+        "title": "Present Simple Tense",
+        "explanation": "The present simple tense is used for habits, routines, and general facts. Form: Subject + base verb (+ s/es for he/she/it)",
+        "examples": [
+          "I work every day.",
+          "She likes coffee.",
+          "They live in London."
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "type": "fill-blank",
+            "question": "She _____ (go) to school every morning.",
+            "correctAnswer": "goes",
+            "points": 10
+          },
+          {
+            "id": "q2",
+            "type": "fill-blank",
+            "question": "We _____ (not/like) spicy food.",
+            "correctAnswer": "don't like",
+            "points": 10
+          },
+          {
+            "id": "q3",
+            "type": "mcq",
+            "question": "Choose the correct sentence:",
+            "options": ["He go to work by bus.", "He goes to work by bus.", "He going to work by bus."],
+            "correctAnswer": 1,
+            "points": 10
+          }
+        ]
+      },
+      {
+        "id": "grammar-beginner-2",
+        "title": "Articles (a, an, the)",
+        "explanation": "Articles are used before nouns. 'A' and 'an' are indefinite articles. 'The' is the definite article.",
+        "examples": [
+          "I have a car.",
+          "She is an engineer.",
+          "The sun is bright."
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "type": "fill-blank",
+            "question": "I need _____ umbrella.",
+            "correctAnswer": "an",
+            "points": 10
+          },
+          {
+            "id": "q2",
+            "type": "fill-blank",
+            "question": "_____ book on the table is mine.",
+            "correctAnswer": "The",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  "intermediate": {
+    "title": "Intermediate Grammar",
+    "description": "More complex grammar structures and tenses",
+    "xpRequired": 100,
+    "lessons": [
+      {
+        "id": "grammar-intermediate-1",
+        "title": "Present Perfect Tense",
+        "explanation": "The present perfect tense connects past actions to the present. Form: have/has + past participle",
+        "examples": [
+          "I have lived here for five years.",
+          "She has finished her homework.",
+          "They have never been to Paris."
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "type": "fill-blank",
+            "question": "I _____ (never/see) that movie.",
+            "correctAnswer": "have never seen",
+            "points": 15
+          },
+          {
+            "id": "q2",
+            "type": "mcq",
+            "question": "Which sentence is correct?",
+            "options": ["I have went there yesterday.", "I have gone there yesterday.", "I went there yesterday."],
+            "correctAnswer": 2,
+            "points": 15
+          }
+        ]
+      }
+    ]
+  },
+  "advanced": {
+    "title": "Advanced Grammar",
+    "description": "Complex grammar structures and advanced usage",
+    "xpRequired": 300,
+    "lessons": [
+      {
+        "id": "grammar-advanced-1",
+        "title": "Subjunctive Mood",
+        "explanation": "The subjunctive mood expresses hypothetical or non-real situations, wishes, and suggestions.",
+        "examples": [
+          "If I were you, I would study harder.",
+          "I suggest that he be more careful.",
+          "It's important that she arrive on time."
+        ],
+        "questions": [
+          {
+            "id": "q1",
+            "type": "fill-blank",
+            "question": "If I _____ (be) rich, I would travel the world.",
+            "correctAnswer": "were",
+            "points": 20
+          },
+          {
+            "id": "q2",
+            "type": "open",
+            "question": "Explain the difference between 'If I was' and 'If I were' and provide examples.",
+            "points": 25
+          }
+        ]
+      }
+    ]
+  }
+}

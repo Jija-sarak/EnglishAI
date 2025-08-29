@@ -1,0 +1,75 @@
+{
+  "beginner": {
+    "title": "Beginner Speaking",
+    "description": "Basic pronunciation and simple conversation practice",
+    "xpRequired": 0,
+    "lessons": [
+      {
+        "id": "speaking-beginner-1",
+        "title": "Self Introduction",
+        "instructions": "Introduce yourself by saying your name, age, and where you are from. Speak clearly and slowly.",
+        "prompts": [
+          "What is your name?",
+          "How old are you?",
+          "Where are you from?",
+          "What do you like to do in your free time?"
+        ],
+        "expectedDuration": 60,
+        "points": 15
+      },
+      {
+        "id": "speaking-beginner-2",
+        "title": "Daily Activities",
+        "instructions": "Describe your daily routine. Use simple present tense and time expressions.",
+        "prompts": [
+          "What time do you wake up?",
+          "What do you have for breakfast?",
+          "How do you go to work or school?",
+          "What do you do in the evening?"
+        ],
+        "expectedDuration": 90,
+        "points": 15
+      }
+    ]
+  },
+  "intermediate": {
+    "title": "Intermediate Speaking",
+    "description": "More complex conversations and presentations",
+    "xpRequired": 100,
+    "lessons": [
+      {
+        "id": "speaking-intermediate-1",
+        "title": "Describing Experiences",
+        "instructions": "Talk about a memorable experience you had. Use past tense and descriptive language.",
+        "prompts": [
+          "Describe a memorable vacation you took.",
+          "Tell me about a challenge you overcame.",
+          "What was the best day of your life?",
+          "Describe a time when you learned something new."
+        ],
+        "expectedDuration": 120,
+        "points": 20
+      }
+    ]
+  },
+  "advanced": {
+    "title": "Advanced Speaking",
+    "description": "Complex discussions and presentations on various topics",
+    "xpRequired": 300,
+    "lessons": [
+      {
+        "id": "speaking-advanced-1",
+        "title": "Opinion and Argumentation",
+        "instructions": "Present your opinion on a complex topic with supporting arguments and examples.",
+        "prompts": [
+          "What are the advantages and disadvantages of social media?",
+          "How do you think technology will change education in the future?",
+          "What is your opinion on remote work vs. office work?",
+          "Discuss the impact of globalization on local cultures."
+        ],
+        "expectedDuration": 180,
+        "points": 25
+      }
+    ]
+  }
+}
